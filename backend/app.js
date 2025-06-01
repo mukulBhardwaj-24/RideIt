@@ -4,13 +4,18 @@ const cors = require('cors');
 const express = require('express');
 const app = express();
 const connectToDb = require('./db/db.js')
+const userRoute = require('./routes/user.routes.js')
 
 connectToDb();
 
 app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 app.get("/", () => {
     res.send("Hello World");
 })
+
+app.use('/users', userRoute)
 
 module.exports = app;
