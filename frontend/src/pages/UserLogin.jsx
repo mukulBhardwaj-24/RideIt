@@ -1,10 +1,23 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 const UserLogin = () => {
 
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState();
+    const [password, setPassword] = useState('');
+
+    const submitHandler = async (e) => {
+      e.preventDefalut();
+      
+      const user = {
+        email,
+        password
+      }
+
+      axios.post('')
+
+    }
 
   return (
     <div className='p-7 h-screen flex flex-col justify-between'>
