@@ -4,7 +4,7 @@ const { validationResult } = require('express-validator')
 const blacklistTokenModel = require('../models/blacklistToken.model.js');
 
 module.exports.registerUser = async (req, res, next) => {
-
+console.log("i m here")
     const error = validationResult(req);
     if(!error.isEmpty())
     {
@@ -19,7 +19,7 @@ module.exports.registerUser = async (req, res, next) => {
 
     const hashedPassword = await userModel.hashPassword(password);
 
-    const user = userService.createUser({
+    const user = await userService.createUser({
         firstName : fullName.firstName,
         lastName : fullName.lastName,
         email, 
