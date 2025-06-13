@@ -4,9 +4,10 @@ import { isRouteErrorResponse, useNavigate } from 'react-router-dom'
 
 const UserProtectedWrapper = ({Children}) => {
     const navigate = useNavigate();
-    const {user} = useContext(UserDataContext);
 
-    if(!user.email)
+    const token = localStorage.getItem('token');
+
+    if(!token)
     {
         navigate('/login');
     }
