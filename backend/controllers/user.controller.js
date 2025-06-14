@@ -32,6 +32,7 @@ console.log("i m here")
 };
 
 module.exports.loginUser = async (req, res, next) => {
+    console.log(`HELLO from login`)
     const error = validationResult(req);
     if(!error.isEmpty())
     {

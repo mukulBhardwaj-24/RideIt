@@ -2,16 +2,15 @@ import React, { useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-const UserLogin = async () => {
-
+const UserLogin = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const navigate = useNavigate();
 
     const submitHandler = async (e) => {
-      e.preventDefalut();
-      
+      e.preventDefault();
+
       const user = {
         email,
         password
