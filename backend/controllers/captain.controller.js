@@ -9,7 +9,7 @@ module.exports.registerCaptain = async (req, res, next) => {
         return res.status(400).json({ errors: errors.array() });
     }
 
-    const { fullname, email, password, vehicle } = req.body;
+    const { fullName, email, password, vehicle } = req.body;
 
     const isCaptainAlreadyExist = await captainModel.findOne({ email });
 
@@ -21,8 +21,8 @@ module.exports.registerCaptain = async (req, res, next) => {
     const hashedPassword = await captainModel.hashPassword(password);
 
     const captain = await captainService.createCaptain({
-        firstname: fullname.firstname,
-        lastname: fullname.lastname,
+        firstName: fullName.firstName,
+        lastName: fullName.lastName,
         email,
         password: hashedPassword,
         color: vehicle.color,
@@ -58,7 +58,7 @@ module.exports.loginCaptain = async (req, res, next) => {
 }
 
 module.exports.captainProfile = async(req, res, next) => {
-    res.status(200).json()
+    res.status(200).json(req.captain)
 }
 
 module.exports.logoutCaptain = async(req, res, next) => {
