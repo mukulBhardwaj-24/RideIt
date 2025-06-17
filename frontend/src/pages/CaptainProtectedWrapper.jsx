@@ -33,7 +33,7 @@ const CaptainProtectedWrapper = ({children}) => {
     {
       return (
         <div className='flex justify-center items-center h-screen'>
-            <img className='w-16' src="https://www.svgrepo.com/show/505031/uber-driver.svg" alt="" />
+            Loading...
         </div>
       )
     }
