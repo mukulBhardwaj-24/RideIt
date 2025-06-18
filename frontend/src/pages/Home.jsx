@@ -1,10 +1,36 @@
-import React from 'react'
+import React, { use, useRef } from 'react'
+import {useGSAP} from '@gsap/react';
+import gsap from 'gsap';
 
 const Home = () => {
 
-function submitHandler(e) {
+  const [pickup, setPickup] = useState('');
+  const [destination, setDestination] = useState('');
+  const [panelOpen, setPanelOpen] = useState(false);
+  const [panelRef] = useRef(null);
+
+  function submitHandler(e) {
     e.preventDefault();
   }
+
+  useGSAP(() => {
+    if (panelOpen) {
+      gsap.to(panelRef.current, {
+        duration: 0.5,
+        height: '30%',
+        ease: 'power2.out',
+        opacity: 1,
+      });
+    }
+    else {
+      gsap.to(panelRef.current, {
+        duration: 0.5,
+        height: '0%',
+        ease: 'power2.out',
+        opacity: 0,
+      });
+    }
+  }, [panelOpen]);
 
   return (
     <div className='h-screen relative overflow-hidden'>
