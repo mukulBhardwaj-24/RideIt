@@ -1,6 +1,7 @@
 import React, { use, useRef } from 'react'
 import {useGSAP} from '@gsap/react';
 import gsap from 'gsap';
+import 'remixicon/fonts/remixicon.css';
 
 const Home = () => {
 
@@ -8,6 +9,7 @@ const Home = () => {
   const [destination, setDestination] = useState('');
   const [panelOpen, setPanelOpen] = useState(false);
   const [panelRef] = useRef(null);
+  const [panelCloseRef] = useRef(null);
 
   function submitHandler(e) {
     e.preventDefault();
