@@ -8,8 +8,8 @@ const Home = () => {
   const [pickup, setPickup] = useState('');
   const [destination, setDestination] = useState('');
   const [panelOpen, setPanelOpen] = useState(false);
-  const [panelRef] = useRef(null);
-  const [panelCloseRef] = useRef(null);
+  const panelRef = useRef(null);
+  const panelCloseRef = useRef(null);
 
   function submitHandler(e) {
     e.preventDefault();
