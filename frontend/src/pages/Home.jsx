@@ -14,9 +14,11 @@ const Home = () => {
   const panelRef = useRef(null);
   const vehiclePanelRef = useRef(null);
   const confirmRidePanelRef = useRef(null);
+  const vehilceFoundRef = useRef(null);
   const panelCloseRef = useRef(null);
   const [vehiclePanel, setVehiclePanel] = useState(false);
   const [confirmRidePanel, setConfirmRidePanel] = useState(false);
+  const [vehilceFound, setVehicleFound] = useState(false);
 
   function submitHandler(e) {
     e.preventDefault();
@@ -74,6 +76,8 @@ const Home = () => {
       });
     }
   }, [confirmRidePanel]);
+
+  useGSAP
 
   
 
