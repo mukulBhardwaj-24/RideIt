@@ -17,9 +17,11 @@ const Home = () => {
   const confirmRidePanelRef = useRef(null);
   const vehilceFoundRef = useRef(null);
   const panelCloseRef = useRef(null);
+  const waitingForDriverRef = useRef(null);
   const [vehiclePanel, setVehiclePanel] = useState(false);
   const [confirmRidePanel, setConfirmRidePanel] = useState(false);
   const [vehilceFound, setVehicleFound] = useState(false);
+  const [waitingForDriver, setWaitingForDriver] = useState(false);
 
   function submitHandler(e) {
     e.preventDefault();
@@ -94,6 +96,23 @@ const Home = () => {
       });
     }
   }, [vehilceFound]);
+
+  useGSAP(() => {
+    if (waitingForDriver) {
+      gsap.to(waitingForDriverRef.current, {
+        duration: 0.5,
+        translateY: '0%',
+        ease: 'power2.out',
+      });
+    }
+    else {
+      gsap.to(waitingForDriverRef.current, {
+        duration: 0.5,
+        translateY: '100%',
+        ease: 'power2.out',
+      });
+    }
+  }, [waitingForDriver]);
 
 
 
