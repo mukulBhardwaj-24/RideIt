@@ -2,6 +2,12 @@ import React from 'react'
 
 const ConfirmRidePopUp = (props) => {
 
+    const [otp, setOtp] = useState('');
+
+    const submitHander = (e) => {
+        e.preventDefault();
+    }
+
     return (
         <div>
             <h5 className='p-1 text-center w-[93%] absolute top-0' onClick={() => {

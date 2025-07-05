@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import CaptainDetails from '../components/CaptainDetails'
+import RidePopUp from '../components/RidePopUp';
+import ConfirmRidePopUp from '../components/ConfirmRidePopUp';
 
 const CaptainHome = () => {
 
