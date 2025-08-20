@@ -24,13 +24,13 @@ It allows users to book rides, captains to accept rides, and provides real-time 
 ## Frontend Structure
 
 src/
-│── App.jsx                      # Main app router
-│── pages/                       # All main pages
-│── components/                  # Reusable UI components
-│── assets/                      # Images, icons, etc.
-│── context/                      # (if using context for auth/state)
-│── utils/                        # Utility/helper functions
-public/                           # Static assets
+│── App.jsx # Main app router
+│── pages/ # All main pages
+│── components/ # Reusable UI components
+│── assets/ # Images, icons, etc.
+│── context/ # (if using context for auth/state)
+│── utils/ # Utility/helper functions
+public/ # Static assets
 
 
 #### App.jsx (`src/App.jsx`)
