@@ -1,6 +1,12 @@
 import React from 'react'
 
-const LocationSearchPanel = () => {
+const LocationSearchPanel = ({suggestions, setPanelOpen, setVehiclePanel, setPickup, setDestination, activeField}) => {
+
+    const handleSuggestionClick = (suggestion) => {
+        if(activeField === 'pickup') setPickup(suggestion);
+        else if(activeField === 'destination') setDestination(suggestion);
+    }
+
   return (
         <div>
             {/* Display fetched suggestions */}
